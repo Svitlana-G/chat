@@ -11,35 +11,57 @@
 
 <body>
     <h1>Chat</h1>
-    <h2>Messages</h2>
+    <form action="" id="userName">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="submit" id="send" value="Save name">
+    </form>
     <ul id="allMessages"></ul>
     <form action="" id="messagesForm">
         <input type="text" id="message" autocomplete="off">
-        <input type="submit" id="send" value="Send">
+        <input type="submit" id="send" value="Send message">
     </form>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
 
-        var form = document.getElementById('messagesForm');
+        var formUser = document.getElementById('userName');
+        var inputUser = document.getElementById('name');
+        var formMessages = document.getElementById('messagesForm');
+
         var input = document.getElementById('message');
         var messages = document.getElementById('allMessages');
 
-        form.addEventListener('submit', function (e) {
+        let inputUserValue;
+        let inputMessageValue;
+
+        formUser.addEventListener('submit', function (e) {
             e.preventDefault();
-            if (input.value) {
-                socket.emit('chat message', input.value);
-                input.value = '';
+            if (inputUser.value) {
+                // socket.emit('user name', inputUser.value);
+                inputUserValue = inputUser.value;
+                console.log('InputUserValue: ' + inputUserValue);
             }
         });
 
-        socket.on('chat message', function (msg) {
+
+        formMessages.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (input.value) {
+                inputMessageValue = input.value;
+                socket.emit('user message', { user: inputUserValue, msg: inputMessageValue });
+                input.value = '';
+                console.log('InputUserValue aus message: ' + inputUserValue);
+            }
+        });
+
+        socket.on('user message', (obj) => {
             var item = document.createElement('li');
-            item.textContent = msg;
+            item.append(obj.user + ": " + obj.message);
             messages.appendChild(item);
             window.scrollTo(0, document.body.scrollHeight);
-        });
+        })
+
     </script>
 
 </body>
