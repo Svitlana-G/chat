@@ -36,7 +36,7 @@ formMessages.addEventListener('submit', function (e) {
 
 socket.on('user message', (obj) => {
     var item = document.createElement('div');
-    item.append(obj.user + ": " + obj.message);
+    item.textContent = obj.user + ": " + obj.message;
     messages.appendChild(item);
     messages.scrollTop = messages.scrollHeight;
 })
