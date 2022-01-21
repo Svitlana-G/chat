@@ -1,0 +1,55 @@
+h1{    
+    text-align: center;
+    color:#0F7173;
+}
+
+form {
+    display: flex;
+}
+
+#userName {
+    width: 40vw;
+    margin: 0 auto;
+    
+}
+section{
+    width: 40vw;
+    height: 50vh;
+    margin: 0 auto;
+    border: 2px solid #0F7173;
+    display: flex;
+    position: relative;  
+    box-sizing: border-box;  
+}
+
+
+
+#allMessages{
+    height: 45vh;
+    margin: 0;
+    overflow-y: scroll;
+    width: 100%;
+}
+#messagesForm{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+input{
+    height: 4vh;
+    box-sizing: border-box;
+    border: 2px solid #0F7173;
+    border-bottom: none;
+}
+
+#message{
+    width: 100%;
+    border-left: none;
+    border-right: none;
+}
+
+#sendMessage, #name{
+    border-right: none;
+}
+

@@ -2,11 +2,13 @@ const express = require('express');
 const { use } = require('express/lib/application');
 
 const app = express();
+app.use(express.static('public'));
+
 const server = require('http').createServer(app);
 
 const io = require('socket.io')(server);
 
-const PORT = 3001;
+const PORT = 3000;
 
 server.listen(PORT);
 
