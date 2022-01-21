@@ -1,5 +1,5 @@
 # chat
 
-npm install
-npm run dev
-go to http://localhost:3000
+ npm install  
+ npm run dev  
+ go to http://localhost:3000
