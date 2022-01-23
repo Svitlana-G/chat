@@ -1,5 +1,10 @@
+body{
+    width: 40vw;
+    margin: 0 auto;
+}
+
 h1{    
-    text-align: center;
+    text-align: left;
     color:#0F7173;
 }
 
@@ -13,16 +18,13 @@ form {
     
 }
 section{
-    width: 40vw;
     height: 50vh;
-    margin: 0 auto;
     border: 2px solid #0F7173;
+    border-bottom: none;
     display: flex;
     position: relative;  
     box-sizing: border-box;  
 }
-
-
 
 #allMessages{
     height: 45vh;
@@ -40,7 +42,7 @@ input{
     height: 4vh;
     box-sizing: border-box;
     border: 2px solid #0F7173;
-    border-bottom: none;
+    /* border-bottom: none; */
 }
 
 #message{
@@ -53,3 +55,6 @@ input{
     border-right: none;
 }
 
+#chat{
+    display: none;
+}
