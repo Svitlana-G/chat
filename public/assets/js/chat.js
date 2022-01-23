@@ -1,11 +1,11 @@
-var socket = io();
+let socket = io();
 
-var formUser = document.getElementById('userName');
-var inputUser = document.getElementById('name');
-var formMessages = document.getElementById('messagesForm');
+let formUser = document.getElementById('userName');
+let inputUser = document.getElementById('name');
+let formMessages = document.getElementById('messagesForm');
 
-var input = document.getElementById('message');
-var messages = document.getElementById('allMessages');
+let input = document.getElementById('message');
+let messages = document.getElementById('allMessages');
 
 let inputUserValue;
 let inputMessageValue;
@@ -35,7 +35,7 @@ formMessages.addEventListener('submit', function (e) {
 });
 
 socket.on('user message', (obj) => {
-    var item = document.createElement('div');
+    let item = document.createElement('div');
     item.textContent = obj.user + ": " + obj.message;
     messages.appendChild(item);
     messages.scrollTop = messages.scrollHeight;
