@@ -1,4 +1,5 @@
-# chat: https://immense-escarpment-08188.herokuapp.com/
+# chat
+https://immense-escarpment-08188.herokuapp.com/
 
  npm install  
  npm run dev  
